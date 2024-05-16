@@ -5,7 +5,7 @@ DESCRIPTION = "Tool to write to all Intel SoC-FPGA AXI Bridges (Lightweight HPS-
 
 SECTION = "rstools" 
 LICENSE = "MIT"
-PR = "r0"
+PR = "r3"
 BRANCH ="master"
 LIC_FILES_CHKSUM = "file://CHECKSUMFILE;md5=87b5d45e84844e8cc3120f018557015c"
 SRC_URI = "git://github.com/robseb/rstoolsCY5.git;protocol=https;branch=${BRANCH}"
