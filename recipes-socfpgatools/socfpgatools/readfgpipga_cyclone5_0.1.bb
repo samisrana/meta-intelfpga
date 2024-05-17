@@ -5,7 +5,7 @@ DESCRIPTION = "Tool to read via the Intel FPGA Manager the GPI (general purpose 
 SECTION = "rstools" 
 LICENSE = "MIT"
 BRANCH ="master"
-PR = "r3" 
+PR = "r0" 
 LIC_FILES_CHKSUM = "file://CHECKSUMFILE;md5=bff2b7959c4b3958a8ae19f6a39a59ac"
 SRC_URI = "git://github.com/robseb/rstoolsCY5.git;protocol=https;branch=${BRANCH}"
 SRCREV = "${AUTOREV}" 
