@@ -4,8 +4,8 @@ SUMMARY = "Linux Kernel for Intel PSG (ALTERA) SoC-FPGAs"
 DESCRIPTION = "Linux Kernel for Intel PSG (ALTERA) SoC-FPGAs" 
 LICENSE = "MIT"
 
-KERNEL_REPO ?= "git://github.com/altera-opensource/linux-socfpga.git"
-KERNEL_PROT ?= "https"
+## KERNEL_REPO ?= "git://${THISDIR}/linux-socfpga"
+## KERNEL_PROT ?= "file"
 
 require recipes-kernel/linux/linux-yocto.inc
 
@@ -13,10 +13,9 @@ inherit kernel
 
 DEPENDS += "bc-native"
 
-KBRANCH = "${LINUX_VERSION_PREFIX}${LINUX_VERSION}${LINUX_VERSION_SUFFIX}"
+## KBRANCH = "${LINUX_VERSION_PREFIX}${LINUX_VERSION}{LINUX_VERSION_SUFFIX}"
 
-SRC_URI = "${KERNEL_REPO};protocol=${KERNEL_PROT};branch=${KBRANCH} \
-            file://socfpga_defconfig"
+SRC_URI = "git://github.com/mathworks/altera-linux.git;protocol=https;branch=mw-agilex-soc-5.15"
 
 FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 
@@ -31,8 +30,8 @@ KERNEL_IMAGETYPE ?= "zImage"
 MACHINE_EXTRA_RRECOMMENDS = " kernel-modules "
 MACHINE_FEATURES = "kernel26"
  
-#SRCREV ?= "${AUTOREV}"
-#SRCREV_machine ?= "${AUTOREV}"
+## SRCREV ?= "${AUTOREV}"
+## SRCREV_machine ?= "${AUTOREV}"
 PV = "${LINUX_VERSION}${LINUX_VERSION_SUFFIX}"
 #PV:append = "+git${SRCPV}"
 
